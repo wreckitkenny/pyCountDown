@@ -56,4 +56,4 @@ Feedback me more features if you want it :D
 
 *Thank you!!!*
 
-Copyright@2019 | Amigo Staff Tool | Written by [Wreck-it Kenny](https://github.com/wreckitkenny)
+Copyright@2019 | pyCountDown Tool | Written by [Wreck-it Kenny](https://github.com/wreckitkenny)
