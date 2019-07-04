@@ -17,6 +17,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." Taken from
 ## Features 
 - Set a time to count it down
 - Reset the time to 0
+- A sound will trigger when time's up
 
 ## Built on
 + Windows: Windows 10
