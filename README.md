@@ -21,6 +21,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." Taken from
 
 ## Built on
 + Windows: Windows 10
++ Linux Distros
 
 ## Installation
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install prerequisites.
