@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 __author__ = "Wreck-it Kenny"
 __copyright__ = "Copyright 2019, The Python Projects"
-__version__ = "1.0.0"
+__version__ = "1.0.2"
 __email__ = "tung.tran.3295@gmail.com"
 __status__ = "Production"
 __doc__ = "A countdown timer written in Python3"
