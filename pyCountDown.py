@@ -11,6 +11,17 @@ from tkinter import *
 # import Pmw
 import winsound
 
+## Callbacks
+def limitEntry(*arg):
+        E1 = e1.get()
+        E2 = e2.get()
+        E3 = e3.get()
+        if len(E1) > 2: e1.set(E1[:2])
+        if len(E2) > 2: e2.set(E2[:2])
+        if len(E3) > 2: e3.set(E3[:2])
+
+
+## Objects
 global count
 count = 0
 class App:
@@ -47,26 +58,26 @@ class App:
         e1 = StringVar()
         e2 = StringVar()
         e3 = StringVar()
-        Label(self.master, text='Hour: ').place(x=45, y=80)
+        e1.trace('w', limitEntry)
+        e2.trace('w', limitEntry)
+        e3.trace('w', limitEntry)
+
+        Label(self.master, text='Hour: ', font=("Courier 10 bold")).place(x=55, y=80)
         self.e1 = Entry(self.master, width=5, justify=CENTER, relief=RIDGE, borderwidth=2, textvariable=e1)
+        self.e1.insert(0, '0')
         self.e1.place(x=100, y=80)
-
-        Label(self.master, text='Minute: ').place(x=45, y=110)
+        Label(self.master, text='Minute: ', font=("Courier 10 bold")).place(x=40, y=110)
         self.e2 = Entry(self.master, width=5, justify=CENTER, relief=RIDGE, borderwidth=2, textvariable=e2)
+        self.e2.insert(0, '0')
         self.e2.place(x=100, y=110)
-
-        Label(self.master, text='Second: ').place(x=45, y=140)
+        Label(self.master, text='Second: ', font=("Courier 10 bold")).place(x=40, y=140)
         self.e3 = Entry(self.master, width=5, justify=CENTER, relief=RIDGE, borderwidth=2, textvariable=e3)
+        self.e3.insert(0, '0')
         self.e3.place(x=100, y=140)
 
-        self.bt1 = Button(self.master, text='Set', width=10, command=self.setTime)
-        self.bt1.place(x=195, y=77)
-
-        self.bt2 = Button(self.master, text='Count', width=10, command=self.start)
-        self.bt2.place(x=195, y=107)
-
-        self.bt3 = Button(self.master, text='Reset', width=10, command=self.resetTime)
-        self.bt3.place(x=195, y=137)
+        self.bt1 = Button(self.master, text='Set', width=10, command=self.setTime).place(x=195, y=77)
+        self.bt2 = Button(self.master, text='Count', width=10, command=self.start).place(x=195, y=107)
+        self.bt3 = Button(self.master, text='Reset', width=10, command=self.resetTime).place(x=195, y=137)
 
     def setTime(self):
         self.h = e1.get().zfill(2)
@@ -80,7 +91,6 @@ class App:
         count = 0
         # endtime = int(self.h)*3600 + int(self.m)*60 + int(self.s)
         self.startTime()
-        
 
     def startTime(self):
         global count
@@ -91,6 +101,12 @@ class App:
     def resetTime(self):
         global count
         count = 2
+        self.e1.delete(0, 'end')
+        self.e2.delete(0, 'end')
+        self.e3.delete(0, 'end')
+        self.e1.insert(0, '0')
+        self.e2.insert(0, '0')
+        self.e3.insert(0, '0')
         self.t.set("00:00:00")
 
     def count(self):
@@ -121,10 +137,6 @@ class App:
             self.t.set(self.setValue)
             if count == 0:
                 self.master.after(1000,self.startTime)
-            
-                # winsound.PlaySound('timeup.wav', winsound.SND_FILENAME)
-            
-            
 
 
 if __name__ == "__main__":
