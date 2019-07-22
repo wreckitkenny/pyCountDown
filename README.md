@@ -40,7 +40,7 @@ The GUI is based on Tkinter. You will need to install the Tkinter or TK package 
 python3 pyCountDown.py
 ```
 ## Executable Version
-Download at [pyCountDown](https://bit.ly/2LBG9a2)
+Download at [pyCountDown](https://1drv.ms/u/s!Ak-6XXP40tnxhEcrqIgopq98bgVw?e=8gH2SE)
 
 ## Screenshot
 ![Shot](https://github.com/wreckitkenny/pyCountDown/blob/master/Screenshot/Screenshot.png)
